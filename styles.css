@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Lora";
+  src: url("assets/fonts/lora-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Indie Flower";
+  src: url("assets/fonts/indie-flower-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+:root {
+  --background: #d8d1b8;
+  --text: #302e29;
+  --accent: #9b4d32;
+  --divider: #1e1e1e;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background); }
+body { color: var(--text); font: 400 24px/1.5 "Lora", Georgia, serif; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { font-weight: 400; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+.page { position: relative; width: 100%; max-width: 1440px; min-height: 1845px; margin-inline: auto; }
+.site-header { height: 69px; border-bottom: 2px solid var(--divider); }
+.navigation { position: relative; height: 67px; font: 400 24px/normal "Indie Flower", cursive; color: #000; }
+.navigation a { position: absolute; top: 18px; white-space: nowrap; text-decoration: none; }
+.nav-me { left: 29px; }
+.nav-projects { left: 86px; }
+.navigation .nav-contact { top: 10px; right: 1px; width: 29px; font-size: 34px; }
+.navigation a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.home-content { width: 1120px; margin-left: 186px; }
+.introduction { display: flex; align-items: center; gap: 84px; height: 593px; }
+.personal-introduction { display: flex; flex: 0 0 483px; flex-direction: column; align-items: flex-start; gap: 28px; }
+.section-label { font: 600 11px/13px "Inter", sans-serif; text-transform: uppercase; color: var(--accent); }
+.introduction h1 { font-size: 94px; line-height: 1.02; }
+.bio { line-height: 1.5; }
+.location { display: flex; gap: 8px; align-items: center; }
+.location img { flex-shrink: 0; }
+.postcard { flex: 0 0 553px; }
+.postcard img { width: 553px; height: 369px; object-fit: cover; }
+.skills { width: 1100px; height: 442px; }
+.home-content h2 { font-size: 48px; line-height: 1.5; }
+.skills h2 { margin-bottom: 36px; }
+.skill { margin-bottom: 36px; }
+.skill:last-child { margin-bottom: 0; }
+.skill h3 { font-size: 24px; line-height: 1.5; }
+.personal-details { display: grid; grid-template-columns: 508px 508px; gap: 90px; }
+.personal-details h2 { margin-bottom: 36px; }
+.site-footer { position: absolute; top: 1700px; left: 186px; font-size: 24px; line-height: 1.5; }
+.site-footer span { margin-inline: 12px; }
+.site-footer a { text-decoration: none; }
+.page-content { width: 1056px; margin-left: 218px; margin-top: 99px; }
+.page-content h1 { font-size: 94px; line-height: 1.5; }
+.projects-page { min-height: 2700px; }
+.projects-content, .project-list, .project-list article, .learning { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+.projects-content h2 { font-size: 42px; line-height: 1.5; }
+.projects-content p, .wedding-copy { width: 960px; max-width: 100%; }
+.project-list { width: 100%; }
+.project-intro-space { height: 36px; }
+.airbnb-photo { width: 960px; height: 360px; object-fit: cover; }
+.wedding-photo { width: 600px; height: 800px; object-fit: cover; }
+.wedding-copy h2 { margin-bottom: 36px; }
+.wedding-copy p + p { margin-top: 36px; }
+.contacts-content { width: 1064px; margin-left: 214px; }
+.contacts-content h1 { color: #000; font-size: 94px; line-height: 120px; white-space: nowrap; }
+.contact-details { display: flex; flex-direction: column; gap: 22px; width: 960px; margin-top: 133px; }
+.plain-link { text-decoration: none; }
+.instagram { margin-top: 36px; }
+/* Preserve the Figma desktop composition while making the same content usable on smaller screens. */
+@media (max-width: 1399px) {
+  .home-content { width: auto; margin-inline: 8%; }
+  .introduction { gap: 6%; }
+  .personal-introduction { flex: 1; min-width: 0; }
+  .postcard { flex: 1; min-width: 0; }
+  .postcard img { width: 100%; height: auto; aspect-ratio: 553 / 369; }
+  .skills { width: 100%; }
+  .personal-details { grid-template-columns: 1fr 1fr; gap: 8%; }
+  .page-content, .contacts-content { width: auto; margin-inline: 10%; }
+  .site-footer { left: 8%; }
+  .contacts-content h1 { white-space: normal; }
+  .contact-details { width: 100%; }
+}
+@media (max-width: 900px) {
+  .introduction h1, .page-content h1, .contacts-content h1 { font-size: 64px; }
+  .home-content h2 { font-size: 40px; }
+  .personal-details { gap: 32px; }
+  .skills { height: auto; padding-bottom: 48px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 18px; }
+  .page, .projects-page { min-height: 100vh; }
+  .site-header { height: 61px; }
+  .navigation { height: 59px; }
+  .navigation .nav-contact { right: 24px; }
+  .home-content, .page-content, .contacts-content { margin-inline: 24px; }
+  .introduction { height: auto; padding-block: 64px 48px; flex-direction: column; align-items: stretch; gap: 40px; }
+  .personal-introduction, .postcard { flex-basis: auto; }
+  .introduction h1, .page-content h1, .contacts-content h1 { font-size: 54px; line-height: 1.15; }
+  .personal-introduction { gap: 24px; }
+  .home-content h2 { font-size: 34px; }
+  .skills h2, .personal-details h2 { margin-bottom: 24px; }
+  .skill { margin-bottom: 24px; }
+  .skill h3 { font-size: 18px; }
+  .personal-details { grid-template-columns: 1fr; gap: 40px; }
+  .site-footer { position: static; margin: 96px 24px 0; padding-bottom: 40px; font-size: 16px; }
+  .site-footer span { margin-inline: 6px; }
+  .page-content { margin-top: 64px; padding-bottom: 64px; }
+  .projects-content h2 { font-size: 32px; }
+  .project-intro-space { height: 0; }
+  .airbnb-photo { width: 100%; height: auto; aspect-ratio: 8 / 3; }
+  .wedding-photo { width: min(100%, 600px); height: auto; aspect-ratio: 3 / 4; }
+  .wedding-copy h2 { margin-bottom: 24px; }
+  .wedding-copy p + p { margin-top: 24px; }
+  .contact-details { margin-top: 64px; overflow-wrap: anywhere; }
+}
